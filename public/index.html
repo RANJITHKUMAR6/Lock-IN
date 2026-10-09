@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Grove – Daily Productivity</title>
+<title>Grove â€“ Daily Productivity</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F1F4EC;--card:#FFFFFF;--ink:#1C2A22;--mute:#66756B;--line:#D9E0D3;--leaf:#2E7D4F;--gold:#B8860B;--ember:#D4442A;--soft:#E4EBDD;
@@ -96,7 +96,7 @@ nav button{font-size:12px}
 <div class="wrap">
   <div class="acct"><span id="acName"></span><button class="act" id="logout" style="padding:4px 9px;font-size:12px"></button></div>
   <div class="hero">
-    <div class="tree" id="tree" aria-hidden="true">🌱</div>
+    <div class="tree" id="tree" aria-hidden="true">ðŸŒ±</div>
     <div style="flex:1">
       <div class="lvl">Level</div>
       <div class="num"><span id="lvl">1</span><small> / 100</small></div>
@@ -117,7 +117,7 @@ nav button{font-size:12px}
   <section id="tasks">
     <div class="add">
       <input type="text" id="in" placeholder="What will you get done?" maxlength="120" aria-label="New task">
-      <select id="pr" aria-label="Priority"><option value="low">Low · 10</option><option value="med" selected>Medium · 20</option><option value="high">High · 40</option></select>
+      <select id="pr" aria-label="Priority"><option value="low">Low Â· 10</option><option value="med" selected>Medium Â· 20</option><option value="high">High Â· 40</option></select>
       <label style="display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute)"><input type="checkbox" id="daily" style="width:18px;height:18px;accent-color:var(--leaf)"> Every day</label>
       <button class="btn" id="addBtn">Add task</button>
     </div>
@@ -127,7 +127,7 @@ nav button{font-size:12px}
 
   <section id="focus" hidden>
     <div class="card timer">
-      <div class="big" id="seed">🌱</div>
+      <div class="big" id="seed">ðŸŒ±</div>
       <div class="clock" id="clock">25:00</div>
       <div class="row" id="durRow">
         <select id="dur" aria-label="Focus length"><option value="15">15 min</option><option value="25" selected>25 min</option><option value="45">45 min</option><option value="60">60 min</option></select>
@@ -147,7 +147,7 @@ nav button{font-size:12px}
 
   <section id="pet" hidden>
     <div class="card pet">
-      <div id="petBig">🥚</div><br>
+      <div id="petBig">ðŸ¥š</div><br>
       <input type="text" id="petName" maxlength="20" aria-label="Pet name">
       <div class="stats" id="petStage"></div>
       <div class="bar"><i id="petFill"></i></div>
@@ -168,7 +168,7 @@ nav button{font-size:12px}
       <h3>Add your own drain</h3>
       <div class="add" style="margin:8px 0 0">
         <input type="text" id="cn" placeholder="Activity name" maxlength="40" aria-label="Activity name">
-        <input type="text" id="cv" inputmode="numeric" placeholder="1–100" style="flex:0 0 80px" aria-label="Amount">
+        <input type="text" id="cv" inputmode="numeric" placeholder="1â€“100" style="flex:0 0 80px" aria-label="Amount">
         <button class="btn" id="cAdd">Add</button>
       </div>
       <div class="dlog" id="dlog"></div>
@@ -192,13 +192,13 @@ nav button{font-size:12px}
   </section>
 
   <div class="rules">
-    <b>Fair play.</b> Points come only from the app: a task counts once, after it has existed for 2 minutes, up to 150 points a day. Focus counts up to 180 points a day. Done tasks cannot be unticked, and refills have daily limits. Your pet grows from verified points only. <b>Dopamine.</b> Surviving a day with no restart gives +10 points and grows your streak. Running out of balls costs 25 points and resets the streak. <b>How points work.</b> Tasks: 10 / 20 / 40. Focus: 1 per minute. Each day that ends with unfinished tasks costs 3 points per task (max 30), and a day with zero completions costs 15 more. Levels 1–100 follow your points, so they can go back down.
+    <b>Fair play.</b> Points come only from the app: a task counts once, after it has existed for 2 minutes, up to 150 points a day. Focus counts up to 180 points a day. Done tasks cannot be unticked, and refills have daily limits. Your pet grows from verified points only. <b>Dopamine.</b> Surviving a day with no restart gives +10 points and grows your streak. Running out of balls costs 25 points and resets the streak. <b>How points work.</b> Tasks: 10 / 20 / 40. Focus: 1 per minute. Each day that ends with unfinished tasks costs 3 points per task (max 30), and a day with zero completions costs 15 more. Levels 1â€“100 follow your points, so they can go back down.
   </div>
   <section class="card plus" id="plus">
     <h2 style="font-size:22px">Grove Plus</h2>
     <div class="stats" id="plan"></div>
     <ul style="margin-top:8px"><li>Free: Dragon pet, Meadow and Lavender styles, light/dark mode, text size, tasks, focus, dopamine meter, backups</li><li>Plus: Cat, Bird and Whale pets, Midnight, Sunset, Ocean, Neon Mint and Amber Night styles, custom accent colour, switch pets any time</li></ul>
-    <div class="plans" id="buyRow"><button class="btn" data-plan="monthly">Monthly · ₹149</button><button class="btn" data-plan="yearly">Yearly · ₹999</button></div>
+    <div class="plans" id="buyRow"><button class="btn" data-plan="monthly">Monthly Â· â‚¹149</button><button class="btn" data-plan="yearly">Yearly Â· â‚¹999</button></div>
     
     <h3>Styles</h3>
     <div class="grp" id="stRow"><button class="act" data-st="meadow"></button><button class="act" data-st="midnight"></button><button class="act" data-st="sunset"></button><button class="act" data-st="ocean"></button><button class="act" data-st="lavender"></button><button class="act" data-st="mint"></button><button class="act" data-st="amber"></button></div>
@@ -207,11 +207,11 @@ nav button{font-size:12px}
 </div>
 <div id="login" role="dialog" aria-modal="true" aria-labelledby="lgT">
   <div class="card lg">
-    <div class="big">🌱</div><h1 id="lgT" style="font-size:30px">Grove</h1>
-    <div id="lgWait" class="stats">Connecting…</div>
+    <div class="big">ðŸŒ±</div><h1 id="lgT" style="font-size:30px">Grove</h1>
+    <div id="lgWait" class="stats">Connectingâ€¦</div>
     <form id="lgForm" hidden>
       <input type="text" id="em" inputmode="email" autocomplete="email" placeholder="Email" aria-label="Email" required>
-      <div id="unW"><input type="text" id="un" maxlength="16" autocomplete="username" placeholder="Username (3–16 letters, numbers, _)" aria-label="Username"></div>
+      <div id="unW"><input type="text" id="un" maxlength="16" autocomplete="username" placeholder="Username (3â€“16 letters, numbers, _)" aria-label="Username"></div>
       <input type="password" id="pw" autocomplete="current-password" placeholder="Password (10+ characters)" aria-label="Password" required>
       <div id="lgMsg" class="stats" aria-live="polite"></div>
       <button class="btn" id="lgGo" type="submit" style="margin-top:10px">Log in</button>
@@ -263,7 +263,7 @@ function rollover(){
   }
   var D=S.dopa;if(!D.failed){D.streak++;D.best=Math.max(D.best,D.streak);addPts(10);}D.failed=false;D.bal=100;D.log=[];D.counts={};S.earned={};
   S.lastDay=today;
-  if(lost>0){var b=S.points;addPts(-lost);toast('−'+(b-S.points)+' points for idle or unfinished days');}
+  if(lost>0){var b=S.points;addPts(-lost);toast('âˆ’'+(b-S.points)+' points for idle or unfinished days');}
   save();
 }
 
@@ -279,16 +279,16 @@ function render(){renderDopa();renderPlus();renderSet();
     var c=document.createElement('input');c.type='checkbox';c.checked=t.done;c.disabled=t.done;c.setAttribute('aria-label','Complete '+t.text);
     c.onchange=function(){toggle(t.id);};
     var s=document.createElement('span');s.className='t';s.textContent=t.text;
-    var g=document.createElement('span');g.className='tag '+t.pr;g.textContent=(t.daily?'daily · ':'')+PTS[t.pr]+' pts';
-    var x=document.createElement('button');x.className='x';x.textContent='×';x.setAttribute('aria-label','Delete '+t.text);x.onclick=function(){remove(t.id);};
+    var g=document.createElement('span');g.className='tag '+t.pr;g.textContent=(t.daily?'daily Â· ':'')+PTS[t.pr]+' pts';
+    var x=document.createElement('button');x.className='x';x.textContent='Ã—';x.setAttribute('aria-label','Delete '+t.text);x.onclick=function(){remove(t.id);};
     li.append(c,s,g,x);ul.appendChild(li);
   });
   if(!S.tasks.length){ul.innerHTML='<li class="empty" style="justify-content:center">No tasks yet. Add your first one above.</li>';}
-  var done=S.log[dayStr()]||0;$('todayStat').textContent=done+' completed today · '+S.tasks.filter(function(t){return !t.done;}).length+' remaining';
+  var done=S.log[dayStr()]||0;$('todayStat').textContent=done+' completed today Â· '+S.tasks.filter(function(t){return !t.done;}).length+' remaining';
   // forest
   var ok=S.forest.filter(function(f){return f.ok;}).length;
-  $('fStat').textContent=ok+' grown · '+(S.forest.length-ok)+' withered';
-  $('trees').innerHTML=S.forest.slice(-120).map(function(f){return f.ok?'🌳':'🥀';}).join('')||'<span class="stats" style="font-size:14px">Complete a focus session to plant your first tree.</span>';
+  $('fStat').textContent=ok+' grown Â· '+(S.forest.length-ok)+' withered';
+  $('trees').innerHTML=S.forest.slice(-120).map(function(f){return f.ok?'ðŸŒ³':'ðŸ¥€';}).join('')||'<span class="stats" style="font-size:14px">Complete a focus session to plant your first tree.</span>';
 }
 function toggle(id){
   var t=S.tasks.find(function(x){return x.id===id;});if(!t||t.done){render();return;}
@@ -317,15 +317,15 @@ function fmt(ms){var s=Math.max(0,Math.ceil(ms/1000));return String(Math.floor(s
 function tick(){
   if(!S.focus)return;
   var left=S.focus.end-Date.now();if(fp!==null)left=Math.max(left,S.focus.dur*60000-(performance.now()-fp));var tot=S.focus.dur*60000,p=1-left/tot;
-  $('clock').textContent=fmt(left);$('seed').textContent=p<.34?'🌱':p<.67?'🌿':'🌳';
+  $('clock').textContent=fmt(left);$('seed').textContent=p<.34?'ðŸŒ±':p<.67?'ðŸŒ¿':'ðŸŒ³';
   if(left<=0){var m=S.focus.dur;S.focus=null;clearInterval(iv);iv=null;S.forest.push({d:dayStr(),ok:true});var g=grant('focus',m,Math.max(1,Math.floor(m/5)));fp=null;if(g)toast('Tree grown. +'+g+' points');idle();save();render();}
 }
-function idle(){$('go').textContent='Plant a tree';$('go').className='btn';$('dur').disabled=false;$('seed').textContent='🌱';$('clock').textContent=String($('dur').value).padStart(2,'0')+':00';}
+function idle(){$('go').textContent='Plant a tree';$('go').className='btn';$('dur').disabled=false;$('seed').textContent='ðŸŒ±';$('clock').textContent=String($('dur').value).padStart(2,'0')+':00';}
 function running(){$('go').textContent='Give up';$('go').className='btn ghost';$('dur').disabled=true;if(!iv)iv=setInterval(tick,500);tick();}
 $('dur').onchange=function(){if(!S.focus)idle();};
 $('go').onclick=function(){
   if(S.focus){if(!confirm('Give up? The tree withers and you lose 10 points.'))return;
-    S.focus=null;fp=null;clearInterval(iv);iv=null;S.forest.push({d:dayStr(),ok:false});addPts(-10);toast('Tree withered. −10 points');idle();save();render();return;}
+    S.focus=null;fp=null;clearInterval(iv);iv=null;S.forest.push({d:dayStr(),ok:false});addPts(-10);toast('Tree withered. âˆ’10 points');idle();save();render();return;}
   var m=+$('dur').value;S.focus={end:Date.now()+m*60000,dur:m};fp=performance.now();save();running();
 };
 
@@ -343,7 +343,7 @@ function mk(host,list,custom){
     var w=document.createElement('span');w.className='chip';
     var b=document.createElement('button');b.className='act '+(a[1]<0?'drain':'gain');
     b.innerHTML=a[0]+' <b>'+(a[1]>0?'+':'')+a[1]+'</b>'+(a[1]>0?' <small style="color:var(--mute)">'+((S.dopa.counts||{})[a[0]]||0)+'/'+(GL[a[0]]||3)+'</small>':'');b.onclick=function(){hit(a[0],a[1]);};w.appendChild(b);
-    if(custom){var x=document.createElement('button');x.className='x';x.textContent='×';x.setAttribute('aria-label','Remove '+a[0]);x.onclick=function(){S.dopa.custom.splice(a.idx,1);save();render();};w.appendChild(x);}
+    if(custom){var x=document.createElement('button');x.className='x';x.textContent='Ã—';x.setAttribute('aria-label','Remove '+a[0]);x.onclick=function(){S.dopa.custom.splice(a.idx,1);save();render();};w.appendChild(x);}
     host.appendChild(w);
   });
 }
@@ -352,7 +352,7 @@ function renderDopa(){
   $('bal').textContent=b;
   var d=$('dots');d.className='dots'+(b<=25?' low':b<=60?' mid':'');
   var h='';for(var i=0;i<100;i++)h+='<i class="'+(i<b?'on':'')+'"></i>';d.innerHTML=h;
-  $('dStat').textContent='Streak '+D.streak+' · best '+D.best+' · restarts '+D.resets;
+  $('dStat').textContent='Streak '+D.streak+' Â· best '+D.best+' Â· restarts '+D.resets;
   var cu=D.custom.map(function(c,i){return {0:c.n,1:c.v,idx:i};});
   $('drains').innerHTML='';$('gains').innerHTML='';
   mk($('drains'),DR);mk($('gains'),GN);
@@ -365,7 +365,7 @@ $('cAdd').onclick=function(){
   if(!n||!(v>0&&v<=100)){toast('Enter a name and an amount from 1 to 100.');return;}
   S.dopa.custom.push({n:n,v:-v});$('cn').value='';$('cv').value='';save();render();
 };
-var PETS={dragon:{s:['🥚','🐣','🦎','🐲','🐉']},cat:{s:['🥚','🐱','🐈','🐯','🦁']},bird:{s:['🥚','🐣','🐥','🦉','🦅']},whale:{s:['🥚','🐠','🐡','🐬','🐳']}};
+var PETS={dragon:{s:['ðŸ¥š','ðŸ£','ðŸ¦Ž','ðŸ²','ðŸ‰']},cat:{s:['ðŸ¥š','ðŸ±','ðŸˆ','ðŸ¯','ðŸ¦']},bird:{s:['ðŸ¥š','ðŸ£','ðŸ¥','ðŸ¦‰','ðŸ¦…']},whale:{s:['ðŸ¥š','ðŸ ','ðŸ¡','ðŸ¬','ðŸ³']}};
 var PN={dragon:'Dragon',cat:'Cat',bird:'Bird',whale:'Whale'},PPR=['cat','bird','whale'],PST=['midnight','sunset','ocean','mint','amber'],STN={meadow:'Meadow',midnight:'Midnight',sunset:'Sunset',ocean:'Ocean',lavender:'Lavender',mint:'Neon Mint',amber:'Amber Night'};
 var SN=['Egg','Hatchling','Juvenile','Adult','Legend'],PT=[0,20,80,200,450],XPT={low:5,med:10,high:20},CAP={task:150,focus:180},evo=false;
 function stage(x){var i=0;while(i<4&&x>=PT[i+1])i++;return i;}
@@ -382,11 +382,11 @@ function renderPet(){
   big.textContent=PETS[P.sp].s[st];big.style.transform='scale('+(0.8+pr*0.35)+')';
   if(evo){big.classList.remove('pop');void big.offsetWidth;big.classList.add('pop');evo=false;}
   if(document.activeElement!==$('petName'))$('petName').value=P.name||'';
-  $('petStage').textContent=SN[st]+' · '+P.xp+' XP';$('petFill').style.width=Math.round(pr*100)+'%';
+  $('petStage').textContent=SN[st]+' Â· '+P.xp+' XP';$('petFill').style.width=Math.round(pr*100)+'%';
   $('petNext').textContent=st>=4?'Fully evolved':(hi-P.xp)+' XP to become a '+SN[st+1];
   $('petMsg').textContent=(S.log[dayStr()]||0)>0?'Fed today':'Hungry';
   $('stgs').innerHTML=PETS[P.sp].s.map(function(e,i){return '<span class="stg'+(i<=st?' on':'')+'">'+e+'<small>'+SN[i]+'<br>'+PT[i]+' XP</small></span>';}).join('');
-  $('spRow').hidden=false;document.querySelectorAll('[data-sp]').forEach(function(b){b.textContent=PN[b.dataset.sp]+(PPR.indexOf(b.dataset.sp)>-1&&!plus()?' 🔒':'');b.setAttribute('aria-pressed',P.sp===b.dataset.sp);});
+  $('spRow').hidden=false;document.querySelectorAll('[data-sp]').forEach(function(b){b.textContent=PN[b.dataset.sp]+(PPR.indexOf(b.dataset.sp)>-1&&!plus()?' ðŸ”’':'');b.setAttribute('aria-pressed',P.sp===b.dataset.sp);});
 }
 $('petName').onchange=function(){S.pet.name=this.value.trim().slice(0,20);save();};
 function locked(){toast('Grove Plus unlocks this.');$('plus').scrollIntoView({behavior:'smooth'});}
@@ -406,7 +406,7 @@ function renderPlus(){
   document.documentElement.setAttribute('data-style',st);applyPrefs();
   $('plan').textContent=plus()?'Plus is active until '+new Date(ME.plusUntil).toLocaleDateString()+'.':(MODE==='acct'?'You are on the free plan.':'Sign in to upgrade.');
   $('buyRow').hidden=plus();
-  document.querySelectorAll('[data-st]').forEach(function(b){b.textContent=STN[b.dataset.st]+(PST.indexOf(b.dataset.st)>-1&&!plus()?' 🔒':'');b.setAttribute('aria-pressed',st===b.dataset.st);});
+  document.querySelectorAll('[data-st]').forEach(function(b){b.textContent=STN[b.dataset.st]+(PST.indexOf(b.dataset.st)>-1&&!plus()?' ðŸ”’':'');b.setAttribute('aria-pressed',st===b.dataset.st);});
   $('acName').textContent=MODE==='acct'&&PROF?'@'+PROF.username:'Guest';$('logout').textContent=MODE==='acct'?'Log out':'Log in';
 }
 var DEF={mode:'system',fs:16,compact:false,motion:true,accent:''};
@@ -449,7 +449,7 @@ async function boot(){show('lgWait');var r=await refreshMe();
 function enter(){resetTimer();S=fresh();try{var r=localStorage.getItem(lsKey());if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}sanitize();openApp();}
 $('lgForm').onsubmit=async function(e){e.preventDefault();var em=$('em').value.trim(),pw=$('pw').value,un=$('un').value.trim(),m=$('lgMsg');
   if(reg){var v=vName(un);if(v){m.textContent=v;return;}if(pw.length<10){m.textContent='Use at least 10 characters for your password.';return;}}
-  $('lgGo').disabled=true;m.textContent='Please wait…';
+  $('lgGo').disabled=true;m.textContent='Please waitâ€¦';
   try{await api(reg?'/api/auth/register':'/api/auth/login',{method:'POST',body:reg?{email:em,username:un,password:pw}:{email:em,password:pw}});
     $('pw').value='';await refreshMe();enter();}catch(err){m.textContent=err.message||'Something went wrong.';}
   $('lgGo').disabled=false;};
@@ -467,3 +467,4 @@ setInterval(function(){var b=S.lastDay;rollover();if(b!==S.lastDay)render();},60
 </script>
 </body>
 </html>
+
