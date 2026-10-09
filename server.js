@@ -31,6 +31,13 @@ const username = z.string().regex(/^[A-Za-z][A-Za-z0-9_]{2,15}$/, '3–16 chars,
 const Register = z.object({ email: z.string().email().max(254), username, password: z.string().min(10).max(128) });
 const Login = z.object({ email: z.string().email(), password: z.string().min(1).max(128) });
 
+const sha = v => crypto.createHash('sha256').update(v).digest('hex');
+async function sendMail(to, subject, html) {
+  if (!env.RESEND_API_KEY) { if (!PROD) console.log(`[mail disabled] to=${to}\n${html}`); return; }
+  const r = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ from: env.MAIL_FROM || 'Grove <onboarding@resend.dev>', to, subject, html }) });
+  if (!r.ok) console.error('Mail failed', r.status, await r.text());
+}
 const wrap = fn => (req, res, next) => fn(req, res, next).catch(e => e.status ? res.status(e.status).json({ error: e.message }) : next(e));
 const fail = (status, message) => Object.assign(new Error(message), { status });
 const safeEq = (a, b) => a.length === b.length && crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
@@ -75,6 +82,29 @@ app.post('/api/auth/login', authLimiter, wrap(async (req, res) => {
   setCookie(res, u._id); res.json({ ok: true });
 }));
 app.post('/api/auth/logout', (_q, res) => { res.clearCookie('grove'); res.json({ ok: true }); });
+
+// ---------- Password reset: single-use token, stored only as a hash, valid for 1 hour ----------
+app.post('/api/auth/forgot', authLimiter, wrap(async (req, res) => {
+  const b = z.object({ email: z.string().email() }).safeParse(req.body); if (!b.success) throw fail(400, 'Enter a valid email');
+  const u = await users.findOne({ email: b.data.email.toLowerCase() });
+  if (u) {
+    const token = crypto.randomBytes(32).toString('hex');
+    await users.updateOne({ _id: u._id }, { $set: { resetHash: sha(token), resetExpires: new Date(Date.now() + 3600e3) } });
+    const link = `${env.APP_URL || 'http://localhost:' + (env.PORT || 4000)}/?reset=${token}`;
+    await sendMail(u.email, 'Reset your Grove password',
+      `<p>Hi ${u.username},</p><p>Use this link within 1 hour to choose a new password:</p><p><a href="${link}">${link}</a></p><p>If you did not ask for this, you can ignore this email.</p>`).catch(e => console.error(e));
+  }
+  res.json({ ok: true });                                   // same answer whether or not the email exists
+}));
+app.post('/api/auth/reset', authLimiter, wrap(async (req, res) => {
+  const b = z.object({ token: z.string().length(64), password: z.string().min(10).max(128) }).safeParse(req.body);
+  if (!b.success) throw fail(400, 'Use a password of at least 10 characters');
+  const hash = await bcrypt.hash(b.data.password, +env.BCRYPT_COST || 12);
+  const r = await users.updateOne({ resetHash: sha(b.data.token), resetExpires: { $gt: new Date() } },
+    { $set: { passHash: hash }, $unset: { resetHash: '', resetExpires: '' } });
+  if (!r.matchedCount) throw fail(400, 'This reset link is invalid or has expired');
+  res.json({ ok: true });
+}));
 
 app.get('/api/me', auth, wrap(async (req, res) => {
   const u = await users.findOne({ _id: req.uid });
